@@ -1,0 +1,302 @@
+import java.util.Scanner;
+class car{
+ String c_name;
+ String c_color;
+ float mileage;
+ int run_rate,modal_no;
+ int prise,VIN;
+ String s1;
+ String s2;
+ String cus_name ;
+ String cus_address;
+ int i=0,ch,ch1,key;
+ int flag;
+ int n;
+ int ch2;
+};
+class car1 extends car {
+ public int derived4(){
+ 
+ String c_name ="aaaaa";
+ 
+ 
+ mileage=-999;
+ String c_color = "ssss";
+ 
+ run_rate=-999999;
+ prise=-999999;
+ return 0; 
+ };
+ public void accept(){
+ System.out.println("Enter model no");
+ Scanner sc = new Scanner(System.in);
+ modal_no = sc.nextInt();
+System.out.println("Enter car name");
+ Scanner sc1 = new Scanner(System.in);
+ c_name = sc1.nextLine();
+ System.out.println("Enter car color");
+ Scanner sc2 = new Scanner(System.in);
+ c_color = sc2.next();
+ System.out.println("Enter VIN number:");
+ Scanner sc3 = new Scanner(System.in);
+ VIN = sc3.nextInt();
+ System.out.println("Enter prize of car");
+ Scanner sc4 = new Scanner(System.in);
+ prise = sc4.nextInt();
+ System.out.println("Enter Milage");
+ Scanner sc5 = new Scanner(System.in);
+ mileage = sc5.nextFloat();
+ System.out.println("Enter Run Rate of car");
+ Scanner sc45 = new Scanner(System.in);
+ run_rate = sc45.nextInt();
+ };
+ public void display(){
+ System.out.println("Car name"+c_name);
+ System.out.println("Car Model_No "+modal_no);
+ System.out.println("Car Color :"+c_color);
+ System.out.println("VIN no of car "+VIN);
+ System.out.println("Price of Car: "+prise);
+ System.out.println("Milage of car : "+mileage);
+ System.out.println("Run Rate of Car : "+run_rate);
+ 
+ };
+ 
+ public void display_1(){ 
+ System.out.println(" Car name : "+c_name);
+ };
+ public void update(){
+ int ch;
+ String c;
+do
+ {
+System.out.println("Car name"+c_name);
+ System.out.println("Car Model_No "+modal_no);
+ System.out.println("Car Color :"+c_color);
+ System.out.println("VIN no of car "+VIN);
+ System.out.println("Price of Car: "+prise);
+ System.out.println("Milage of car : "+mileage);
+ System.out.println("Run Rate of Car : "+run_rate); 
+ Scanner sc6 = new Scanner(System.in);
+ System.out.println("Enter your choice for modifying the fields : ");
+ ch = sc6.nextInt();
+ 
+ 
+ switch(ch)
+ {
+ case 1:
+ System.out.println("Enter new model no: "+modal_no);
+ break;
+ case 2:
+ System.out.println("Enter new car name: "+c_name);
+ break;
+ case 3:
+ System.out.println("Enter new car color: "+c_color);
+ break;
+ case 4:
+ System.out.println("Enter new mileage: "+mileage);
+ break;
+ case 5:
+ System.out.println("Enter new run rate: "+run_rate);
+ break;
+ case 6:
+ System.out.println("Enter new VIN no: "+VIN);
+ break;
+ }
+ Scanner sc7 = new Scanner(System.in);
+ System.out.println("\n\nDo you want to modify more fields?: ");
+ c = sc7.nextLine();
+}while(c=="Yes" || c=="yes");
+};
+public void display2();
+
+public void display2()
+
+{
+ Scanner sc8 = new Scanner(System.in);
+ 
+ System.out.println("Enter Admin Name : ");
+ String s1 = sc8.nextLine();
+ // Scanner sc9 = new Scanner(System.in);
+ 
+ System.out.println("Enter password : ");
+ String s2 = sc8.nextLine();
+ 
+ System.out.println(s1);
+ System.out.println(s2);
+ if(s1.equals(s2)){
+ System.out.println("\n\t**********************");
+ 
+ System.out.println("\n\tHey!! Welcome you Are Registerd Admin ");
+ System.out.println("\n\tsucssefully loged in");
+ System.out.println("\n\t**********************");
+ }
+ else{
+ System.out.println("Wrong password enterd");
+ System.exit(0);
+ };
+};
+public int customer(){
+ int i;
+ Scanner sc10 = new Scanner(System.in);
+ 
+ System.out.println("ENTER WHICH CAR RECORD DO YOU WANT TO SEE:");
+ i = sc10.nextInt();
+ 
+ return i;
+};
+public void admin(){
+ int ch2;
+ Scanner sc11 = new Scanner(System.in);
+ System.out.println("Enter your choice for modifying the fields: ");
+ ch2 = sc11.nextInt();
+};
+ 
+public int search(int key){
+ int flag=0;
+ 
+ if(key==modal_no)
+ {
+ flag=1;
+ }
+ return flag;
+};
+};
+class carm{
+public static void main(String args[]){
+ 
+ int i=0,ch,ch1,key;
+ int flag = 0;
+ int n = 0;
+ int ch2 = 0;
+ String s1;
+ String s2;
+ String cus_name;
+ String cus_address;
+car1 d = new car1();
+ do{
+ 
+ 
+ admin:
+ for(i = 0;i<4;i++){
+ Scanner sc11 = new Scanner(System.in);
+ System.out.println("\n\t-----------------------1.Admin 2.Customer 3.exit-------------------------");
+ ch2 = sc11.nextInt();
+ switch(ch2){
+ case 1:
+ d.display2();
+ do{
+ Scanner sc12 = new Scanner(System.in);
+ System.out.println("\n\n Menu:"+ "\n\n\t1.Insert new entry" + "\n\t2.List a table" + "\n\t3.Delete a Record" + "\n\t4.Search for a Record" + "\n\t5.Update" + "\n\t6.EXIT" + "\n\nEnter your choice: ");
+ ch = sc12.nextInt();
+ switch(ch)
+ {
+ 
+ case 1:
+ do
+ {
+ 
+ System.out.println("\n\n Insert new entry:");
+ d.accept();
+ i++;
+ Scanner sc13 = new Scanner(System.in);
+ System.out.println("\n\tDo u want to continue");
+ ch1 = sc13.nextInt();
+ }while(ch1==1);
+ n=i;
+ break;
+ case 2:
+ 
+ for(i=0;i<n;i++)
+ {
+ System.out.println("\n\tRecord#"+i);
+ d.display();
+ }
+ break;
+ case 3:
+ 
+ 
+ Scanner sc14 = new Scanner(System.in);
+ System.out.println("\n\nEnter Record Number:");
+ key = sc14.nextInt();
+ for(i=key;i<n;i++)
+ {
+ 
+ i++;
+ }
+ System.out.println("Record Deleted");
+ n--;
+ break;
+ case 4:
+ 
+ Scanner sc15 = new Scanner(System.in);
+ System.out.println("\n\nEnter MODAL_NO:");
+ key= sc15.nextInt();
+ for(i=0;i<n;i++)
+ {
+ flag=d.search(key);
+ if(flag==1)
+ break;
+ }
+ if(flag==0)
+ System.out.println("\n\nRecord is not present");
+ else
+ System.out.println("\n\nRecord is present at " + i+1 +" location");
+ d.display();
+ break;
+ case 5:
+ Scanner sc16 = new Scanner(System.in);
+ System.out.println("\n\nEnter Record Number: ");
+ key = sc16.nextInt();
+ d.update();
+ break;
+ case 6:
+ continue admin;
+ 
+ }
+ 
+ } while(ch!=6);
+break;
+ 
+ case 2:
+ int a;
+ 
+ int details;
+ int number;
+ System.out.println("\n\tDetails of Car Name:-->");
+ for(i=0;i<n;i++)
+ {
+ d.display_1();
+ }
+ Scanner sc17 = new Scanner(System.in);
+ System.out.println("\nDo you want to see car details(Yes - 1/No - 0)");
+ details = sc17.nextInt();
+ System.out.println("You Enter:-->"+details);
+ if(details == 1)
+ {
+ System.out.println("\n\tHELLO!!");
+ Scanner sc20 = new Scanner(System.in);
+ System.out.println("\n\t ENTER YOUR NAME:");
+ cus_name = sc20.nextLine();
+ Scanner sc18 = new Scanner(System.in);
+ System.out.println("\n\t ENTER YOUR ADDRESS:");
+ cus_address = sc18.nextLine();
+ do{
+ System.out.println("\n\tHello ");
+ a = d.customer();
+ d.display();
+ Scanner sc22 = new Scanner(System.in);
+ System.out.println( "\n\tdo you want to continue(Yes - 1/No - 0) ");
+ number = sc22.nextInt();
+ 
+ 
+ }while(number==1);
+ 
+ }
+ break;
+ }
+ }
+ 
+ }
+while(ch2!=3);
+};
+};
